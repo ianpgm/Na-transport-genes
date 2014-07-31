@@ -1,5 +1,5 @@
-input_file = open("Na-genes-table.tdt")
-output_file = open("Na-genes-table-filtered.tdt", "w")
+input_file = open("Na-genes-table-ATPion.tdt")
+output_file = open("Na-genes-table-ATPion-filtered.tdt", "w")
 
 species_set = set()
 
