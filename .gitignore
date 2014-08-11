@@ -2,5 +2,6 @@ genomes/*
 hmm_output/*
 all_ncbi_genomes/*
 ncbi_draft_genomes/*
-
-
+extras/*
+ncbi_draft_genomes_backup/*
+all.faa.tar.gz

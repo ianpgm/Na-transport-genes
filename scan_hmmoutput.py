@@ -1,5 +1,5 @@
 genome_filenames = list()
-for line in open("list_of_genomes"):
+for line in open("hmm_output_file_list"):
 	genome_filenames.append(line.strip("\n"))
 
 hmms = ['ATP-synt_C','Ion_trans_2','MNHE','MtrA','NQR2_RnfD_RnfE','NQRA','Na_Ca_ex','Na_H_Exchanger','Na_H_antiport_1','Na_H_antiport_2','NhaB','OAD_beta','Rnf-Nqr','TrkH']
@@ -11,16 +11,17 @@ for hmm in hmms:
 	header_line = header_line + hmm + '\t'
 	default_output_list.append(0)
 
-output_file = open("Na-genes-table.tdt", "w")
+output_file = open("Na-genes-table-plusdrafts.tdt", "w")
 output_file.write(header_line + "\n")
 
 for genome in genome_filenames:
+	print(genome)
 	output_list = list([0]*len(default_output_list))
 	output_string = genome + "\t"
-	try:
-		hmm_results = open("hmm_output/" + genome + ".hmm_output")
-	except:
-		print("error for " + genome)
+#	try:
+	hmm_results = open("hmm_output/" + genome)
+#	except:
+#	print("error for " + genome)
 #	try:
 	for line in hmm_results:
 		if line.startswith("#"):
